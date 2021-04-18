@@ -1,4 +1,3 @@
-
 Write-Host "Fetching IP info..." -ForegroundColor Gray -BackgroundColor Black
 $AdapterList = @()
 Get-NetAdapter | ? {$_.InterfaceDescription -NOTmatch 'Bluetooth'}  | % { 
