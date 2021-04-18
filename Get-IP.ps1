@@ -1,6 +1,6 @@
 Write-Host "Fetching IP info..." -ForegroundColor Gray -BackgroundColor Black
 $AdapterList = @()
-Get-NetAdapter | ? {$_.InterfaceDescription -NOTmatch "Bluetooth" -and $_.Satus -NOTmatch "Disabled"}  | % { 
+Get-NetAdapter | ? {$_.InterfaceDescription -NOTmatch "Bluetooth" -and $_.Status -NOTmatch "Disabled"}  | % { 
 $adapter = $_
 $prefix = (Get-NetIPAddress -InterfaceIndex $adapter.InterfaceIndex | ? {$_.ipv4address}).prefixlength
 ('1' * $prefix).PadRight(32, '0') | Out-Null;$bitString=('1' * $prefix).PadRight(32,'0'); $SnM=[String]::Empty
