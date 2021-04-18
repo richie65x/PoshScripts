@@ -1,4 +1,4 @@
-﻿Function Get-IP {
+
 Write-Host "Fetching IP info..." -ForegroundColor Gray -BackgroundColor Black
 $AdapterList = @()
 Get-NetAdapter | ? {$_.InterfaceDescription -NOTmatch 'Bluetooth'}  | % { 
@@ -39,6 +39,3 @@ If ($_ -NOTmatch "Index" -and $_ -NOTmatch "Alias" -and $_ -NOTmatch "Status") {
 }
 Write-Host "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" -ForegroundColor Gray
 }
-} # End Function Get-IP
-
-set-alias -name gip -value Get-IP
